@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p id="display"></p>
+			<form>
+
+			First name: <input type="text" id="fname"/><br>
+
+			Last name: <input type="text" id="lname"/><br>
+
+			<input type="button" value="Submit" onclick="firstLast()"/>
+
+			</form>
+
+				<script>
+
+					function firstLast(){
+
+						console.log("you clicked me")
+
+						var fname= document.getElementById('fname').value;
+						console.log(fname) 
+
+						var lname= document.getElementById("lname").value;
+						console.log(lname)
+
+						document.getElementById("display").innerHTML = "Welcome " + fname + " " + lname;
+
+
+
+
+
+					}
+				</script>
+
+	</body>
+</html>
