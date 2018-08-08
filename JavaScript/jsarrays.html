@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title></title>
+
+	</head>
+
+	<body>
+		<h1>Richie's Juice Spot</h1>
+
+		<button onclick="juice()">Get Juicin</button>
+
+		<h4 id=liquid></h4>
+
+		<script>
+ 			var fruit = []
+
+			function juice() {	
+
+				var txt;
+
+				var kiwi = prompt("Please enter your seletion");
+
+				fruit.push(kiwi);
+
+				console.log("button pressed")
+
+				
+				document.getElementById("liquid").innerHTML = fruit.join(", With ");
+
+
+				
+			
+
+			if (kiwi == null || kiwi == "") {
+        txt = "User cancelled the prompt.";
+	    } else {
+	        txt = "With " + fruit.join(", With ") + "! Anything else for your nurishment";
+	    }
+	    document.getElementById("liquid").innerHTML = txt;
+	}
+		</script>
+
+
+
+	</body>
+</html>
