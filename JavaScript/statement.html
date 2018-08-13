@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title></title>
+
+	</head>
+
+	<body>
+
+		<h1 id="blah"></h1>
+
+		<script>
+		function test(){
+
+			var loi=[]
+
+			var count = 0;
+
+			while (count < 3) {
+
+				loi.push(parseInt(prompt("Show me entered number")));
+				console.log(typeof loi[count])
+				count++
+			}
+
+			for (var r = 0; r < loi.length; r++) {
+				if (loi[r]> count) {
+					count = loi[r]
+				}
+			}
+			console.log(count);
+
+			 }
+
+		test();
+
+	</script>
+
+	</body>
+
+</html>
