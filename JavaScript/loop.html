@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+	<html>
+
+	<head>
+
+		<title></title>
+
+	</head>
+
+	<body>
+
+		<h2 id="show"></h2>
+
+		<h3 id="display"></h3>
+
+		<ul id="colors"></ul>
+
+		<h1 id="print"></h1>
+
+		<ul id="col"></ul>
+
+
+
+		<script>
+
+			var count = 1;
+
+			while(count <= 100){
+
+				console.log(count)
+
+				count++;
+
+				
+
+				}
+
+
+			
+
+
+			// var count = 1; /*Initialization-Start of loop*/
+
+			// while (count <= 10){ Condition-When do you want this loop to end
+
+			// 	console.log(count);
+
+			// 	count+=2; /*Incrementation-How much the counter increases/decreases*/
+
+				
+			// }
+
+			// var count = 10;
+
+			// while (count >= 1){
+
+			// 	console.log(count);
+
+			// 	count--;
+
+			// }
+			// console.log('------')
+			// var count = 1;
+
+			// while(count <= 100){
+
+			// 	if(count % 2 == 0){
+
+			// 		console.log(count + ' is even');
+
+			// 		document.getElementById('display').innerHTML += count + ' is even<br>' ;
+
+
+			// 	} else{
+
+			// 		console.log(count + ' is odd');
+
+			// 		document.getElementById('display').innerHTML += count + ' is odd<br>' ;
+			// 	}
+
+			// 	count++;
+
+			// }
+
+			// console.log('-----');
+
+			// var sum = 0;
+
+			// var count = 1; 
+
+			// while(count <= 5){
+
+			// 	sum += count;
+
+			// 	count++;
+
+
+			// }
+
+			// console.log('The sum is ' + sum);
+
+			/* Leighton's Way
+			var end = 101;
+
+			if(end % 2 == 0){
+
+				(end * end/2 -) - (end/2)-1;
+			} else{
+				end * end/2;
+			}*/
+			
+			// var password = prompt('Please Enter Password');
+
+			// var attempts = 0;
+			// //Correct password is sneeze
+			// while(password != 'sneeze' ){
+
+			// 	attempts++;
+
+			// 	if(attempts >= 3){
+
+			// 		alert('Acchoo!');
+
+			// 	}
+
+			// 	password = prompt('Password Incorrect! Try Again');
+
+			// }
+
+			// console.log('----------');
+
+			// for(var i = 1; i <= 20; i++){
+
+			// 	console.log(i);
+
+
+			// }
+
+			// console.log('----------');
+
+			// var weathers = ['rainy', 'sunny', 'moist', 'humid', 'awesome'];
+
+			// for(var i = 0; i < weathers.length; i++){
+			// 	console.log('It is ' + weathers[i] + ' outside');
+
+			// }
+
+			// For each element in color array
+
+			// Create  <li> for the <ul> with id="colors"
+
+			// Get that <li> the corresponding color of the element
+
+			// var color = ['blue', 'red', 'purple', 'green', 'teal', 'magenta'];
+
+			// for(var i = 0; i < color.length; i++){
+
+				// document.getElementById('colors').innerHTML += '<li style="color: ' + color[i] + '">' + color[i] + '</li>';
+
+			//More efficient method to for loop
+
+			// 	var li = document.createElement('li');
+
+			// li.innerHTML = color[i];
+
+			// li.style.color = color[i];
+
+			// document.getElementById('colors').appendChild(li)
+
+			//}
+			// var input = prompt('Enter Your Name');
+
+			// var names = ['Anthony', 'Mathilda', 'Rich', 'Janitza', 'Mike', 'Joe', 'Ronny', 'Rico', 'Moo', 'John', 'Mark'];
+
+			// var stat = ['Great', 'Fair', 'Cool'];
+			
+
+
+			// console.log('----------')
+
+			// //If name starts with "J", they are Great
+			// //If name starts with "R", they are Fair 
+			// //If name starts with "M", they are Cool
+			// for(var i = 0; i < names.length; i++){
+
+			// 	if (names[i].charAt(0) == 'J'){
+			// 		console.log(names[i] + ' is ' + stat[0]);
+
+			// 	} else if (names[i].charAt(0) == 'R'){
+			// 		console.log(names[i] + ' is ' + stat[1]);
+
+			// 	} else if (names[i].charAt(0) == 'M'){
+			// 		console.log(names[i] + ' is ' + stat[2]);
+				
+			// 								}
+			// 							}
+
+			var color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+
+			var order =  ["th", "st", "nd", "rd"];
+
+			for(var i = 0; i < color.length; i++){
+
+
+				if(i == 0){
+					//if element color is in the 1st position then add "st"
+					//if i equals 0 then get "st" from order
+					order[1]
+					//add "st" in front color 
+					// document.getElementById()
+					document.getElementById('print').innerHTML +=  (i+1) + order[1] +' choice is ' + color[i] + '<br>';
+
+				} else if(i==1){
+					document.getElementById('print').innerHTML += (i+1) + order[2] +' choice is ' + color[i] + '<br>';
+
+					// console.log((i+1) + order[2] +' choice is ' + color[i])
+				}else if(i==2){
+					document.getElementById('print').innerHTML += (i+1) + order[3] +' choice is ' + color[i] + '<br>';
+
+					// console.log((i+1) + order[3] +' choice is ' + color[i])
+				}else {
+					document.getElementById('print').innerHTML +=  (i+1) + order[0] +' choice is ' + color[i] + '<br>';
+
+					
+				
+					// console.log((i+1) + order[0] +' choice is ' + color[i])
+
+
+				} 
+				// document.getElementById('print').innerHTML = 
+				// if(i ==1){
+
+				// 	console.log((i+1) + order[2] +' choice is ' + color[i])
+				// }
+				// document.getElementById('color').innerHTML += '<ol style="color: ' + order[1] + '">' + color[i] + '</ol>';
+				
+			} 
+				
+				
+
+
+
+
+
+							
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
