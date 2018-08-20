@@ -27,15 +27,41 @@
 
 			while(count <= 100){
 
-				console.log(count)
+				if(count % 3 == 0 && count % 5 == 0){
 
-				count++;
+					document.getElementById('print').innerHTML;
 
+					console.log(count + ' FizzBuzz');
+				}
 				
+				else if(count % 3 == 0){
+
+					document.getElementById('print').innerHTML;
+
+					console.log(count + ' Fizz');
 
 				}
+				else if (count % 5 == 0){
+
+					document.getElementById('print').innerHTML;
+
+					console.log(count + ' Buzz');
+
+				}
+				else{
+
+					document.getElementById('print').innerHTML;
+
+					console.log(count)
+				} 
 
 
+				 
+
+				count ++;
+				}
+
+				document.getElementById('print').innerHTML;
 			
 
 
@@ -66,7 +92,7 @@
 
 			// 	if(count % 2 == 0){
 
-			// 		console.log(count + ' is even');
+					// console.log(count + ' is even');
 
 			// 		document.getElementById('display').innerHTML += count + ' is even<br>' ;
 
@@ -195,46 +221,36 @@
 			// 								}
 			// 							}
 
-			var color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+			// var color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
 
-			var order =  ["th", "st", "nd", "rd"];
+			// var order =  ["th", "st", "nd", "rd"];
 
-			for(var i = 0; i < color.length; i++){
+			// for(var i = 0; i < color.length; i++){
 
 
-				if(i == 0){
-					//if element color is in the 1st position then add "st"
-					//if i equals 0 then get "st" from order
-					order[1]
-					//add "st" in front color 
-					// document.getElementById()
-					document.getElementById('print').innerHTML +=  (i+1) + order[1] +' choice is ' + color[i] + '<br>';
+			// 	if(i == 0){
+			// 		//if element color is in the 1st position then add "st"
+			// 		//if i equals 0 then get "st" from order
+			// 		order[1]
+			// 		//add "st" in front color 
+			// 		// document.getElementById()
+			// 		document.getElementById('print').innerHTML +=  (i+1) + order[1] +' choice is ' + color[i] + '<br>';
 
-				} else if(i==1){
-					document.getElementById('print').innerHTML += (i+1) + order[2] +' choice is ' + color[i] + '<br>';
+			// 	} else if(i==1){
+			// 		document.getElementById('print').innerHTML += (i+1) + order[2] +' choice is ' + color[i] + '<br>';
 
-					// console.log((i+1) + order[2] +' choice is ' + color[i])
-				}else if(i==2){
-					document.getElementById('print').innerHTML += (i+1) + order[3] +' choice is ' + color[i] + '<br>';
+			// 		// console.log((i+1) + order[2] +' choice is ' + color[i])
+			// 	}else if(i==2){
+			// 		document.getElementById('print').innerHTML += (i+1) + order[3] +' choice is ' + color[i] + '<br>';
 
-					// console.log((i+1) + order[3] +' choice is ' + color[i])
-				}else {
-					document.getElementById('print').innerHTML +=  (i+1) + order[0] +' choice is ' + color[i] + '<br>';
+			// 		// console.log((i+1) + order[3] +' choice is ' + color[i])
+			// 	}else {
+			// 		document.getElementById('print').innerHTML +=  (i+1) + order[0] +' choice is ' + color[i] + '<br>';
 
-					
+
+			// 	} 
 				
-					// console.log((i+1) + order[0] +' choice is ' + color[i])
-
-
-				} 
-				// document.getElementById('print').innerHTML = 
-				// if(i ==1){
-
-				// 	console.log((i+1) + order[2] +' choice is ' + color[i])
-				// }
-				// document.getElementById('color').innerHTML += '<ol style="color: ' + order[1] + '">' + color[i] + '</ol>';
-				
-			} 
+			// } 
 				
 				
 
