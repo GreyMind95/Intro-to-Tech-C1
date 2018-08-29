@@ -1,0 +1,28 @@
+body {
+  background-color: #db4f0f
+  
+}
+
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.side {
+  display: flex;
+  justify-content: space-between;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ltop {
+  align-items: flex-end;
+}

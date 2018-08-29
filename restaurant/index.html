@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/spice.css">
+    <!-- <link rel="stylesheet" href="/css/flexboxgrid.css"> -->
+    <title></title>
+
+  </head>
+
+  <body>
+    <header>
+      <div class="container center">
+        <div class="row">
+          <h1>Welcome to the Yard!!!</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container center">
+      <h2>Menu</h2>
+    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 center">
+            <select id="mainMenu">
+              <option value="0">Ackee && Saltfish</option>
+              <option value="1">Sardine</option>
+              <option value="2">Duty Gyal</option>
+            </select>
+          </div>
+            <div class="col-4 center">
+              <select id="sideMenu">
+                <option value="0">Breadfruit</option>
+                <option value="1">Dumplin</option>
+                <option value="2">Fried Fritters</option>
+              </select>
+            </div>
+        </div>
+      </div>
+        <div class="container center">
+          <div class="row">
+            <div class="col">
+              <input id="names" type="text" placeholder="Enter name">
+              <!-- <input  type="text" placeholder="Enter orders"> -->
+              <input type="button" value="SUBMIT" onclick="submitOrder()">
+            </div>
+          </div>
+        </div>
+
+        <div id="result" class="container">
+          <p></p>
+        </div>
+
+    <script src="http://cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
+    <script>
+      var db = new alasql.Database();
+      //table of customers
+      db.exec('CREATE TABLE names (id int PRIMARY KEY, name varchar(255))');
+      //add customers to names list
+      db.exec('INSERT INTO names VALUES(0, "Bounty")');
+      db.exec('INSERT INTO names VALUES(1, "Spice")');
+      db.exec('INSERT INTO names VALUES(2, "Popcaan")');
+      db.exec('INSERT INTO names VALUES(3, "Vybz")');
+      db.exec('INSERT INTO names VALUES(4, "Vado")');
+
+      //create main menu table
+      db.exec('CREATE TABLE menuItems (id int PRIMARY KEY, name varchar(255))');
+      //add food items
+      db.exec('INSERT INTO menuItems VALUES(0, "Ackee && Saltfish")');
+      db.exec('INSERT INTO menuItems VALUES(1, "Sardine")');
+      db.exec('INSERT INTO menuItems VALUES(2, "Duty Gyal")');
+
+      //creat side menu table
+      db.exec('CREATE TABLE sideItems (id int PRIMARY KEY, name varchar(255))');
+      //add side items
+      db.exec('INSERT INTO sideItems VALUES(0, "Breadfruit")');
+      db.exec('INSERT INTO sideItems VALUES(1, "Dumplin")');
+      db.exec('INSERT INTO sideItems VALUES(2, "Fried Fritters")');
+
+      db.exec('CREATE TABLE orders (id int PRIMARY KEY,name varchar(255) ,time_ordered date, mid int, sid int)');
+      //putting items in menu
+      //figure out how to input time frames
+      db.exec('INSERT INTO orders VALUES(0,"Bounty", "'+ new Date().toLocaleTimeString() +'", 2, 1 )');
+      // promt('Ready for the next customer');
+      db.exec('INSERT INTO orders VALUES(1,"Vybz", "'+ new Date().toLocaleTimeString() +'", 2, 2 )');
+      // promt('Move to different register');
+      db.exec('INSERT INTO orders VALUES(2,"Suzette", "'+ new Date().toLocaleTimeString() +'", 1, 1 )');
+      // promt('Ready for the next customer');
+      db.exec('INSERT INTO orders VALUES(3,"Vado", "'+ new Date().toLocaleTimeString() +'", 1, 1 )');
+
+
+      function submitOrder(){
+        var name = document.getElementById("names").value;
+        var main = document.getElementById("mainMenu").value;
+        var side = document.getElementById("sideMenu").value;
+
+        var id = db.exec('SELECT * FROM orders').length;
+
+        db.exec(`INSERT INTO orders VALUES(${id} , "${name}", "${new Date().toLocaleTimeString()}" ,"${main}", "${side}")`);
+        printOrder();
+
+      }
+
+      function printOrder(){
+        var orders = db.exec("SELECT * FROM orders");
+        console.log(orders)
+        document.getElementById("result").innerHTML = "";
+        for(var i = 0; i < orders.length; i++){
+          var mainitem = db.exec(`SELECT name FROM menuItems WHERE id = ${orders[i].mid}`)[0].name;
+          var sideitem = db.exec(`SELECT name FROM sideItems WHERE id = ${orders[i].sid}`)[0].name;
+          document.getElementById("result").innerHTML += orders[i].name + " ordered " + mainitem + " && " + sideitem + " at " + orders[i].time_ordered + "<br>";
+        }
+      }
+
+
+    </script>
+  </body>
+
+</html>
