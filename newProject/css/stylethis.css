@@ -1,0 +1,45 @@
+#navbar {
+  overflow: hidden;
+  background-color: green;
+}
+
+#navbar a {
+	float: right;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+}
+
+/* .sticky {
+  position: fixed;
+  top: auto;
+  width: 100%;
+
+} */
+
+.mid {
+  display: flex;
+  justify-content: center;
+}
+
+.sad {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.sim {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.som {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.room {
+  justify-content: space-between;
+}
